@@ -1,0 +1,26 @@
+import asyncio
+import os
+
+from temporalio.client import Client
+from temporalio.worker import Worker
+
+from src.activities import say_hello
+from src.workflows import SayHello
+
+TEMOPORAL_SERVICE_URL: str = os.environ.get("TEMOPORAL_SERVICE", "127.0.0.1:7233")
+
+
+async def main():
+    client = await Client.connect(TEMOPORAL_SERVICE_URL, namespace="default")
+    # Run the worker
+    worker = Worker(
+        client,
+        task_queue="hello-task-queue",
+        workflows=[SayHello],
+        activities=[say_hello],
+    )
+    await worker.run()
+
+
+if __name__ == "__main__":
+    asyncio.run(main())

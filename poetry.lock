@@ -99,6 +99,26 @@ files = [
 ]
 
 [[package]]
+name = "protobuf"
+version = "5.28.0"
+description = ""
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "protobuf-5.28.0-cp310-abi3-win32.whl", hash = "sha256:66c3edeedb774a3508ae70d87b3a19786445fe9a068dd3585e0cefa8a77b83d0"},
+    {file = "protobuf-5.28.0-cp310-abi3-win_amd64.whl", hash = "sha256:6d7cc9e60f976cf3e873acb9a40fed04afb5d224608ed5c1a105db4a3f09c5b6"},
+    {file = "protobuf-5.28.0-cp38-abi3-macosx_10_9_universal2.whl", hash = "sha256:532627e8fdd825cf8767a2d2b94d77e874d5ddb0adefb04b237f7cc296748681"},
+    {file = "protobuf-5.28.0-cp38-abi3-manylinux2014_aarch64.whl", hash = "sha256:018db9056b9d75eb93d12a9d35120f97a84d9a919bcab11ed56ad2d399d6e8dd"},
+    {file = "protobuf-5.28.0-cp38-abi3-manylinux2014_x86_64.whl", hash = "sha256:6206afcb2d90181ae8722798dcb56dc76675ab67458ac24c0dd7d75d632ac9bd"},
+    {file = "protobuf-5.28.0-cp38-cp38-win32.whl", hash = "sha256:eef7a8a2f4318e2cb2dee8666d26e58eaf437c14788f3a2911d0c3da40405ae8"},
+    {file = "protobuf-5.28.0-cp38-cp38-win_amd64.whl", hash = "sha256:d001a73c8bc2bf5b5c1360d59dd7573744e163b3607fa92788b7f3d5fefbd9a5"},
+    {file = "protobuf-5.28.0-cp39-cp39-win32.whl", hash = "sha256:dde9fcaa24e7a9654f4baf2a55250b13a5ea701493d904c54069776b99a8216b"},
+    {file = "protobuf-5.28.0-cp39-cp39-win_amd64.whl", hash = "sha256:853db610214e77ee817ecf0514e0d1d052dff7f63a0c157aa6eabae98db8a8de"},
+    {file = "protobuf-5.28.0-py3-none-any.whl", hash = "sha256:510ed78cd0980f6d3218099e874714cdf0d8a95582e7b059b06cabad855ed0a0"},
+    {file = "protobuf-5.28.0.tar.gz", hash = "sha256:dde74af0fa774fa98892209992295adbfb91da3fa98c8f67a88afe8f5a349add"},
+]
+
+[[package]]
 name = "pydantic"
 version = "2.9.1"
 description = "Data validation using Python type hints"
@@ -251,6 +271,41 @@ anyio = ">=3.4.0,<5"
 full = ["httpx (>=0.22.0)", "itsdangerous", "jinja2", "python-multipart (>=0.0.7)", "pyyaml"]
 
 [[package]]
+name = "temporalio"
+version = "1.7.0"
+description = "Temporal.io Python SDK"
+optional = false
+python-versions = "<4.0,>=3.8"
+files = [
+    {file = "temporalio-1.7.0-cp38-abi3-macosx_10_9_x86_64.whl", hash = "sha256:92ec0a1af8d4b41245df339a422f1f87367742d9638d2dba7bb7d3ab934e7f5d"},
+    {file = "temporalio-1.7.0-cp38-abi3-macosx_11_0_arm64.whl", hash = "sha256:8b4bb77d766a2ac1d85f3e9b682658fee67d77e87f73bd256d46cd79ecf767f6"},
+    {file = "temporalio-1.7.0-cp38-abi3-manylinux2014_aarch64.manylinux_2_17_aarch64.whl", hash = "sha256:a38dd43061666700500d5808c18ec0b0f569504a2f22b99d7c38dc4dc50b21fd"},
+    {file = "temporalio-1.7.0-cp38-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:e0087fb6cdb9e9b8aa62c1705526947cb00a91159435d294f3da0d92b501ed56"},
+    {file = "temporalio-1.7.0-cp38-abi3-win_amd64.whl", hash = "sha256:eb45b751c6f7946dccba29260922f0e7192b28b8fb9e2aa5afc2aaf5157891d9"},
+    {file = "temporalio-1.7.0.tar.gz", hash = "sha256:5057b74df644bd4f5f4eb0e95e730a0a36a16f7ee926d36fcd479c223a7c63cd"},
+]
+
+[package.dependencies]
+protobuf = ">=3.20"
+types-protobuf = ">=3.20"
+typing-extensions = ">=4.2.0,<5.0.0"
+
+[package.extras]
+grpc = ["grpcio (>=1.59.0,<2.0.0)"]
+opentelemetry = ["opentelemetry-api (>=1.11.1,<2.0.0)", "opentelemetry-sdk (>=1.11.1,<2.0.0)"]
+
+[[package]]
+name = "types-protobuf"
+version = "5.27.0.20240907"
+description = "Typing stubs for protobuf"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "types-protobuf-5.27.0.20240907.tar.gz", hash = "sha256:bb6f90f66b18d4d1c75667b6586334b0573a6fcee5eb0142a7348a765a7cbadc"},
+    {file = "types_protobuf-5.27.0.20240907-py3-none-any.whl", hash = "sha256:5443270534cc8072909ef7ad9e1421ccff924ca658749a6396c0c43d64c32676"},
+]
+
+[[package]]
 name = "typing-extensions"
 version = "4.12.2"
 description = "Backported and Experimental Type Hints for Python 3.8+"
@@ -282,4 +337,4 @@ standard = ["colorama (>=0.4)", "httptools (>=0.5.0)", "python-dotenv (>=0.13)",
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "eecf36a44e83c49e3265f13a31588186f28000bc1ee124965a9766b792df17e6"
+content-hash = "432e1a0bccf6af5e94d58a46256df60c15293f31e20e52fad935b72ace3439f3"

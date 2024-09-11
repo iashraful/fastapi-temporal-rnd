@@ -1,0 +1,25 @@
+services:
+  api:
+    restart: always
+    build: .
+    volumes:
+      - .:/app
+    env_file:
+      - .env
+    ports:
+      - "${API_PUBLISHED_PORT}:8080"
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 1024M
+        reservations:
+          cpus: "0.25"
+          memory: 500M
+
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://api:8080"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+    command: uvicorn main:app --reload --host 0.0.0.0 --port 8080
